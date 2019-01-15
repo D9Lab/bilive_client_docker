@@ -1,8 +1,18 @@
-FROM arm32v6/node:alpine
+FROM debian:stretch-slim AS builder
 
 MAINTAINER Disappear9
 
-COPY qemu-arm-static /usr/bin
+RUN echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources.list \
+    && apt-get update \
+    && apt-get -y install wget unzip \
+    && wget https://github.com/Disappear9/bilive_client_docker/archive/master.zip \
+    && unzip master.zip \
+    && mkdir /qemu \
+    && cp bilive_client_docker-master/qemu/* /qemu
+
+FROM arm32v6/node:alpine AS release
+
+COPY --from=builder /qemu/qemu-arm-static /usr/bin
 
 EXPOSE 23333
 
