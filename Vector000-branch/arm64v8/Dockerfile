@@ -1,5 +1,9 @@
 FROM arm64v8/node:alpine
 
+MAINTAINER Disappear9
+
+COPY qemu-aarch64-static /usr/bin
+
 EXPOSE 23333
 
 WORKDIR /app
