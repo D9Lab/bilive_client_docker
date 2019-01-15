@@ -6,13 +6,13 @@
 
 ### 拉取镜像  
 
-    sudo docker pull disappear9/bilive_client
+    sudo docker pull disappear9/bilive_client  (latest为x64 alpine镜像，其他架构需要手动选择tag)
 ### 创建volume  
 
     sudo docker volume create bilivec_data
 ### 运行  
 
-    sudo docker run -d -p 23333:23333 --name bilivec -v bilivec:/app/options bilivec
+    sudo docker run -d -p 23333:23333 --name bilive_client -v bilivec_data:/app/options disappear9/bilive_client
 
 ## 关于更新  
 
