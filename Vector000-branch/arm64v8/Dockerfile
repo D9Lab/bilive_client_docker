@@ -10,7 +10,7 @@ RUN echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources
     && mkdir /qemu \
     && cp bilive_client_docker-master/qemu/* /qemu
 
-FROM arm32v8/node:alpine AS release
+FROM arm64v8/node:alpine AS release
 
 COPY --from=builder /qemu/qemu-aarch64-static /usr/bin
 
