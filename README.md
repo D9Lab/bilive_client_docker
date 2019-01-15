@@ -1,6 +1,6 @@
 # bilive_client docker镜像
 
-提供 x64/amd64 i386 armv6/v7 arm64v8 版架构的镜像，tag后有-lzghzr后缀的为lzghzr分支，其余的为Vector000分支。  
+提供 `x64/amd64` `i386` `armv6/v7` `arm64v8` 版架构的镜像，tag后有`-lzghzr`后缀的为lzghzr分支，其余的为Vector000分支。  
 
 ## 使用方法  
 
