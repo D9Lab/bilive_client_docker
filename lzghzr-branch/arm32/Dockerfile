@@ -1,10 +1,8 @@
-FROM debian:stretch-slim AS builder
+FROM alpine AS builder
 
 MAINTAINER Disappear9
 
-RUN echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get -y install wget unzip \
+RUN apk --no-cache add unzip
     && wget https://github.com/Disappear9/bilive_client_docker/archive/master.zip \
     && unzip master.zip \
     && mkdir /qemu \
