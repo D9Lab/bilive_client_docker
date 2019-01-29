@@ -2,6 +2,15 @@
 
 提供 `x64/amd64` `i386` `armv6/v7` `arm64v8` 版架构的镜像，tag后有`-lzghzr`后缀的为lzghzr分支，其余的为Vector000分支。  
 
+## Tags
+
+`arm`: For arm32v6 arm32v7
+`arm64`: For arm64v8
+`x64/latest`: For x64(Linux)
+`i386`: For x32(Linux)
+
+由于DockerHub的Autobuild系统限制，无法提供Windows镜像。
+
 ## 使用方法  
 
 ### 拉取镜像  
