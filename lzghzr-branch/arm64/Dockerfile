@@ -2,7 +2,7 @@ FROM alpine AS builder
 
 MAINTAINER Disappear9
 
-RUN apk --no-cache add unzip
+RUN apk --no-cache add unzip \
     && wget https://github.com/Disappear9/bilive_client_docker/archive/master.zip \
     && unzip master.zip \
     && mkdir /qemu \

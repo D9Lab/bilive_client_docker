@@ -2,8 +2,10 @@ FROM alpine AS builder
 
 MAINTAINER Disappear9
 
-RUN apk --no-cache add unzip                                && wget https://github.com/Disappear9/bilive_client_docker/archive/master.zip \
-    && unzip master.zip \                                   && mkdir /qemu \
+RUN apk --no-cache add unzip \
+    && wget https://github.com/Disappear9/bilive_client_docker/archive/master.zip \
+    && unzip master.zip \
+    && mkdir /qemu \
     && cp bilive_client_docker-master/qemu/* /qemu
 
 FROM arm64v8/node:alpine AS release
