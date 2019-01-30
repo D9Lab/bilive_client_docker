@@ -7,14 +7,14 @@ RUN apk --no-cache add unzip \
     && unzip master.zip \
     && mkdir /qemu \
     && cp bilive_client_docker-master/qemu/* /qemu \
+    && rm master.zip \
     && wget https://github.com/lzghzr/bilive_client/archive/master.zip \
     && unzip master.zip \
     && mkdir /app \
-    && mv bilive_client-master/* /app \
-    && rm -rf bilive_client-master master.zip
+    && mv bilive_client-master/* /app
 
 
-FROM arm32v6/node:alpine AS release
+FROM arm32v7/node:alpine AS release
 
 COPY --from=builder /qemu/qemu-arm-static /usr/bin
 COPY --from=builder /app /app
