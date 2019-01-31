@@ -14,7 +14,7 @@ RUN apk --no-cache add unzip \
     && mv bilive_client-master/* /app
 
 
-FROM arm32v7/node:alpine AS release
+FROM arm32v6/node:alpine AS release
 
 COPY --from=builder /qemu/qemu-arm-static /usr/bin
 COPY --from=builder /app /app
