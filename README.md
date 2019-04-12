@@ -9,7 +9,7 @@
 `x64/latest`: For x64(Linux)
 `i386`: For x32(Linux)
 
-由于DockerHub的Autobuild系统限制，无法提供Windows镜像。
+由于DockerHub的Autobuild系统限制，无法提供Windows版镜像。
 
 ## 使用方法  
 
@@ -25,4 +25,6 @@
 
 ## 关于更新  
 
-DockerHub的Automated build只在有 git push动作时才会触发，所以镜像更新并不是实时的，需要我去手动触发更新。（`如果有更好的办法请发个issue，感谢`）
+<del>DockerHub的Automated build只在有 git push动作时才会触发，所以镜像更新并不是实时的，需要我手动去触发更新。</del>  
+现在Vector000分支加入了自动更新，container每次启动时都会更新+重新编译。
+（`如果有更好的办法请发个issue，感谢`）

@@ -23,8 +23,7 @@ EXPOSE 23333
 
 WORKDIR /app
 
-RUN npm install \
-    && npm run build
+RUN npm install
 
 CMD ["sh","-c","npm start"]
 
