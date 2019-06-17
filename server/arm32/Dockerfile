@@ -8,18 +8,20 @@ RUN apk --no-cache add unzip \
     && mkdir /qemu \
     && cp bilive_client_docker-master/qemu/* /qemu \
     && rm master.zip \
-    && wget https://github.com/bilive/bilive_client/archive/master.zip \
-    && unzip master.zip \
-    && mkdir /app \
-    && mv bilive_client-master/* /app
 
+RUN wget https://github.com/bilive/bilive_server/archive/master.zip \
+    && unzip master.zip \
+    && mkdir bilive_server-master/options \
+    && cp bilive_server-master/nedb/roomList.db bilive_server-master/options/roomList.db \
+    && mkdir /app \
+    && mv bilive_server-master/* /app
 
 FROM arm32v6/node:alpine AS release
 
 COPY --from=builder /qemu/qemu-arm-static /usr/bin
 COPY --from=builder /app /app
 
-EXPOSE 23333
+EXPOSE 20080
 
 WORKDIR /app
 

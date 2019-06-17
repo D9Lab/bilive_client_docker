@@ -6,7 +6,7 @@ EXPOSE 23333
 
 WORKDIR /app
 
-RUN wget https://github.com/lzghzr/bilive_client/archive/master.zip \
+RUN wget https://github.com/bilive/bilive_client/archive/master.zip \
     && unzip master.zip \
     && mv bilive_client-master/* . \
     && rm -rf bilive_client-master master.zip
