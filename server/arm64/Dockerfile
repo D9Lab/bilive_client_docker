@@ -7,7 +7,7 @@ RUN apk --no-cache add unzip \
     && unzip master.zip \
     && mkdir /qemu \
     && cp bilive_client_docker-master/qemu/* /qemu \
-    && rm master.zip \
+    && rm master.zip
 
 RUN wget https://github.com/bilive/bilive_server/archive/master.zip \
     && unzip master.zip \
