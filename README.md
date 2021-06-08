@@ -2,6 +2,8 @@
 
 提供 `x64/amd64` `i386` `armv6/v7` `arm64v8` 版架构的镜像，tag后有`-lzghzr`后缀的为lzghzr分支，其余的为Vector000分支。  
 
+# 2021/06/09 DockerHUB停止了Automated build免费的使用，在找到新的解决办法前，镜像不会有更新  
+
 ## Tags
 
 `arm`: For arm32v6 arm32v7
